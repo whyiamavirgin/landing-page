@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url(fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url(fonts/Gilroy-Medium.ttf);
+}
+
+body {
+    font-family: 'Gilroy-Bold';
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+
+
+
+* {
+    padding: 0;
+    margin: 0%;
+}
+
+li {
+    list-style: none;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header */
+
+header {
+    background: #ffffff;
+    padding: 34px 0;
+}
+
+.header-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-container a {
+    color: #828282;
+    font-size: 18px;
+}
+
+.header-container li:not(:last-child){
+    margin-right: 155px;
+}
+
+.header-container a:hover{
+    transition: all.7s ease;
+    color: #070707;
+}
+
+.logo {
+    display: none;
+}
+
+ul {
+    display: flex;
+}
+
+nav {
+    margin-bottom: 32px;
+}
+
+.line {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    height: 1px;
+    background: #828282;
+}
+
+/* Welcome container */
+
+.welcome {
+    height: 650px;
+    background: #ffffff;
+}
+
+.welcome-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.welcome-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-text h1 {
+    font-size: 47.34px;
+}
+
+.welcome-text p {
+    font-family: 'Gilroy-Medium';
+    margin-top: 60px;
+    font-size: 18px;
+}
+
+.welcome-text a {
+    color: #828282;
+    margin-left: 9%;
+    margin-right: -5%;
+    margin-top: 3%;
+    font-size: 16px;
+    transform: rotate(-90deg);
+}
+
+.active {
+    color: #070707;
+}
+
+.welcome-pic {
+    padding-top: 944px;
+    margin-top: 50px;
+    margin-bottom: 105px;
+    background: url(img/welcome-pic.jpg) no-repeat;
+}
+
+/* About me container */
+
+.about-me {
+    background: #F6F6F6;
+    height: 506px;
+}
+
+.about-container {
+    text-align: center;
+    width: 70%;
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    margin-top: 120px;
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.about-container p {
+    /* margin-top: 17px; */
+    font-size: 18px;
+    color: #070707;
+    font-family: 'Gilroy-Medium';
+}
+
+.about-spacing {
+    margin-bottom: 40px;
+}
+
+/* Adaptive */
+
+@media screen and (max-width: 420px) {
+    .logo {
+        display: inline;
+        font-family: 'Gilroy-Bold';
+        font-size: 27px;
+    }
+    .line {
+        display: none;
+    }
+    .header-container {
+        margin-top: 10%;
+        width: 85%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-menu {
+        display: none;
+    }
+    .main-menu li {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+    }
+    .main-menu a {
+        display: block;
+        padding: 8px;
+    }
+    .toggle-button {
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        color: #000000;
+    }
+    .toggle-button:after {
+        content: attr(data-open);
+        font-size: 30px;
+        margin-top: 45%;
+        display: flex;
+    }
+    #menu-checkbox:checked + nav[role="navigation"] .main-menu {
+        display: block;
+        height: 500px;
+    }
+    #menu-checkbox:checked + nav[role="navigation"] .toggle-button:after {
+        content: attr(data-close);
+        margin-top: 0;
+        color: #828282;
+        font-size: 33px;
+        display: block;
+        margin-left: 115%;   
+    } 
+    .header-container a{
+        font-size: 34px;
+        width: 160px;
+        margin-right: -60px;
+        margin-bottom: 10px;
+    }
+    .main-menu {
+        position: relative;
+        top: 15px;
+        margin-top: -24%;
+    }
+    .invisible {
+        display: none;
+    }
+    nav {
+        margin-bottom: 10px;
+    }
+    .welcome-container {
+        margin-top: -15%;
+        width: 80%;
+    }
+    .welcome-text h1 {
+        display: none;
+    }
+    .welcome-text a {
+        display: none;
+    }
+    .welcome-pic {
+        margin-top: 30px;
+        background: url(img/welcome-pic-adap.jpg) no-repeat;
+    }
+    .about-container {
+        width: 90%;
+        margin-top: 83px;
+    }
+}
