@@ -1,12 +1,28 @@
 $('#menu-checkbox').on('click', function () {
     var x = document.getElementById('logo');
-    var y = document.getElementById('main');
     if ( $(this).is(':checked') ) {
         x.className += " invisible";
-        y.className += " invisible";
     } else {
         // checkbox unchecked 
         x.className = "logo";
-        y.className = "main";
     }
 })
+
+var abc = document.getElementById('footer-navig');
+if($(window).width() <= 420) {
+    abc.className += " disabled";
+} else {
+    abc.className = "footer-nav";
+};
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+for (let anchor of anchors) {
+    anchor.addEventListener("click", function(event) {
+        event.preventDefault();
+        const blockID = anchor.getAttribute('href')
+        document.querySelector('' + blockID).scrollIntoView({
+            behavior: "smooth", 
+            block: "start"
+        })
+    })
+}
