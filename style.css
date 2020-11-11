@@ -299,6 +299,24 @@ nav {
 
 /* Adaptive */
 
+@media screen and (min-width: 1333px) {
+    .welcome {
+        height: 800px;
+    }
+    
+    .welcome-pic {
+        background: url(img/welcome-pic.jpg) no-repeat;
+        background-size: 120%;
+        /* margin-bottom: 100px; */
+    }
+}
+
+@media screen and (min-width: 1650px) {
+    .welcome {
+        height: 1000px;
+    }
+}
+
 @media screen and (max-width: 420px) {
     .logo {
         display: inline;
